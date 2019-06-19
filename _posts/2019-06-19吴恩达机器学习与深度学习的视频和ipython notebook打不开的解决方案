@@ -1,0 +1,69 @@
+![](https://oscimg.oschina.net/oscnet/8342068ed05af65a8d29f95604705d169c0.jpg)
+
+# 吴恩达机器学习与深度学习的视频和ipython notebook打不开的解决方案
+
+## 个人的一些建议
+
+![](https://oscimg.oschina.net/oscnet/9a10869f8839ca6aa25858863ca864849db.jpg)
+
+如上图是python目前比较流行的算法库，当然不仅仅只是这些，所谓术业有专攻。我们可以大概先了解这三个库numpy 、tensorflow、pandas。  
+1.numpy库偏向于处理机器学习与深度学习中已定义的数据，也可以笼统说数据库的数据，即数字数据！通过机器学习与深度学习的算法解决大数据的处理。使用向量矩阵数组完成庞大数据的计算，举个简单的例子，在java中如果我们需要计算一次一千万的数据，我们可以通过for循环遍历一千万次，如果for循环内的算法有三行，那么此时的算法复杂度就是o(30000000)准确说应该是o(n)，但是在python中我们只需要调用numpy中的np函数库，一行代码就可以解决，那么算法复杂度就是o(1)，这里的算法复杂度特指时间复杂度，目前的编程环境基本不考虑空间复杂度，所以从算法层面来说python的性能已经很明显，其次numpy库的数学函数本身就是用的并行计算，并且可以同时调用gpu与cpu进行计算，这里有一个并行计算的概念，numpy使用的是MISD，并行计算的模式有四种具体的可以自行查阅！所以这也就是为什么需要学习python的原因！  
+2.tensorflow库是用来解决深度学习中的计算机视觉处理，比如图片视频，目前比较火的faceswap就是使用这个库来开发的。计算机视觉基本是目前人工智能中最为火爆的课题，所以此库的重要性不言而喻！  
+3.pandas库是基于numpy和matplotlib开发的，数据挖掘与数据分析就是使用此库开发，这个函数库与matlab和octave的函数基本通用。我们在进行机器学习与深度学习算法的训练时，需要大量的数据特征量，就可以使用此库进行数据挖掘与分析，选取需要的数据摈弃无用的数据，数据的挖掘不仅仅只是沿用已有的数据，还要再已有的数据上计算出有帮助于训练深度学习与机器学习算法的数据。  
+所以通过上述三点我们能看出来不是我们需要学习python,而是时代在召唤程序员！python终将统治下一个十年二十年！
+
+## 吴恩达简介
+
+_[吴恩达](https://baike.baidu.com/item/%E5%90%B4%E6%81%A9%E8%BE%BE)（1976-，英文名：[Andrew Ng](https://baike.baidu.com/item/Andrew%20Ng)），[华裔美国人](https://baike.baidu.com/item/%E5%8D%8E%E8%A3%94%E7%BE%8E%E5%9B%BD%E4%BA%BA/10259906)，是[斯坦福大学](https://baike.baidu.com/item/%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6)[计算机](https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA)科学系和电子工程系[副教授](https://baike.baidu.com/item/%E5%89%AF%E6%95%99%E6%8E%88/10714435)，人工智能实验室主任。吴恩达是[人工智能](https://baike.baidu.com/item/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/9180)和[机器学习](https://baike.baidu.com/item/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/217599)领域国际上最权威的学者之一。吴恩达也是[在线教育](https://baike.baidu.com/item/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2)平台[Coursera](https://baike.baidu.com/item/Coursera)的联合创始人（with [Daphne Koller](https://baike.baidu.com/item/Daphne%20Koller)）。2014年5月16日，吴恩达加入[百度](https://baike.baidu.com/item/%E7%99%BE%E5%BA%A6/6699)，担任百度公司首席科学家，负责百度研究院的领导工作，尤其是Baidu Brain计划。  2017年10月，吴恩达将出任Woebot公司新任董事长，该公司拥有一款同名聊天机器人。_
+
+## _coursera网址与界面_
+
+[https://www.coursera.org](https://www.coursera.org/)
+
+![](https://oscimg.oschina.net/oscnet/75631d64ccad1948f5325fdeaedcd087641.jpg)
+
+注册帐号后添加需要学习的课程然后进入课程，进入课程后我们会发现视频打不开的问题，这是由于国内的dns有污染，导致coursera域名对应的ip地址错误，我们只需要在本地的hosts文件中将coursera对应的解析ip映射好就可以打开视频了。
+
+### hosts文件路径
+
+C:\\Windows\\System32\\drivers\\etc
+
+![](https://oscimg.oschina.net/oscnet/9fcf703f61371b792292102f84138577c31.jpg)
+
+52.84.246.90    d3c33hcgiwev3.cloudfront.net  
+52.84.246.252    d3c33hcgiwev3.cloudfront.net  
+52.84.246.144    d3c33hcgiwev3.cloudfront.net  
+52.84.246.72    d3c33hcgiwev3.cloudfront.net  
+52.84.246.106    d3c33hcgiwev3.cloudfront.net  
+52.84.246.135    d3c33hcgiwev3.cloudfront.net  
+52.84.246.114    d3c33hcgiwev3.cloudfront.net  
+52.84.246.90    d3c33hcgiwev3.cloudfront.net  
+52.84.246.227    d3c33hcgiwev3.cloudfront.net
+
+### 刷新本地dns缓存
+
+打开cmd命令窗口运行
+
+```bash
+ipconfig/flushdns
+```
+
+然后我们再刷新页面会看到视频可以正常打开
+
+![](https://oscimg.oschina.net/oscnet/fe2d7ab58b3512630b233b085e97450ee24.jpg)
+
+### ipython notebook如何打开
+
+由于众所周知的原因，在中国google是被禁止的，所以google的公共资源是请求不到的，coursera在中国是允许的，但是coursera的网站使用的google的前端公共库所以导致ipython notebook无法打开。
+
+我们只需要进行如下操作就可以解决此问题
+
+[https://github.com/liushaotao/ReplaceGoogleCDN](https://github.com/liushaotao/ReplaceGoogleCDN)
+
+![](https://oscimg.oschina.net/oscnet/11f49e5644bfe297e401c1dc5abda99b5a2.jpg)
+
+将此项目fork到自己的账户下,点击Clone or download的绿色按钮直接下载zip包,然后解压到本地,根据此项目的readme指南将chrome文件夹覆盖到chrome浏览器的chrome路径下,然后刷新页面这样就可以完成编程作业的练习了。
+
+![](https://oscimg.oschina.net/oscnet/8591c6b44cf1384fae1714468a9511c81b7.jpg)
+
+![](https://oscimg.oschina.net/oscnet/65b2b66588d339f2db27ad7bcc85d65c20a.jpg)
